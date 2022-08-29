@@ -3,16 +3,26 @@
 <head>
 	<title>Gradien Background</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="reset.css">
 </head>
-<body id="gradient">
-	<h1>Background Generator</h1>
-	<h2>Current CSS Background</h2>
-	<input class="color1" type="color" name="color1" value="#2E3C97">
-	<input class="color2" type="color" name="color2" value="#209E53">
-	<input class="color3" type="color" name="color3" value="#DC892C">
-
-	<h3></h3>
-	<button id="button">Go random!</button>
+<body>
+	<div class="wrapper">
+		<div class="gradient">
+			<header class="gradient__header">
+				<h1 class="gradient__header-main">Background Generator</h1>
+				<h2 class="gradient__header-subheader">Current CSS Background</h2>
+			</header>
+			<div class="gradient__main">
+				<input class="color1" type="color" name="color1">
+				<input class="color2" type="color" name="color2">
+				<input class="color3" type="color" name="color3">
+				<input class="color4" type="color" name="color4">
+				<input class="color5" type="color" name="color5">
+			</div>
+			<h3 class="gradient__result"></h3>
+			<button class="gradient__button">Go random!</button>
+		</div>
+	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

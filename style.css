@@ -1,42 +1,58 @@
 body {
-	font: 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    top: 15%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.5);
 }
-
-h1 {
-    font: 600 3.5em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    width: 100%;
+.gradient {
+  text-align: center;
+  height: 100vh;
 }
-
-h3 {
-	font: 900 1em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: none;
-    letter-spacing: 0.01em;
+.gradient__header-main {
+  font-size: 3.5em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  width: 100%;
+  padding: 20px 0;
 }
-
-button {
-    border: 5px solid white;
-    border-radius: 200px;
-    height: 3em;
-    background: linear-gradient(to right, rgb(254, 163, 170), rgb(248, 184, 139), rgb(250, 248, 132), rgb(186, 237, 145), rgb(178, 206, 254), rgb(242, 162, 232));
+.gradient__header-subheader {
+  font-weight: 900;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  padding: 20px 0;
 }
-
-button:hover {
-    background-color: #FF7400;
-    transition: 0.3s;
-    cursor: pointer;
+.gradient__button {
+  border: 3px solid white;
+  border-radius: 20px;
+  height: 50px;
+  width: 100px;
+  background: linear-gradient(
+    to right,
+    rgb(254, 163, 170),
+    rgb(248, 184, 139),
+    rgb(250, 248, 132),
+    rgb(186, 237, 145),
+    rgb(178, 206, 254),
+    rgb(242, 162, 232)
+  );
 }
-
-button:active {
-decoration: none;
+.gradient__button:hover {
+  background-color: #ff7400;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.gradient__button:active {
+  box-shadow: 0 10px 10px #444444;
+}
+.gradient__result {
+  padding: 20px 0;
+  margin: 20px 0;
+  background-color: rgba(255,255,255,0.3);
+  text-transform: none;
+  border: 1px solid white;
+}
+.wrapper {
+  margin: 0 auto;
 }

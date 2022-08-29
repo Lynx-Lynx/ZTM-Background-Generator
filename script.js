@@ -1,48 +1,50 @@
-var css = document.querySelector("h3");
-var color1 = document.querySelector(".color1");
-var color2 = document.querySelector(".color2");
-var color3 = document.querySelector(".color3");
-var body = document.getElementById("gradient");
-var button = document.getElementById("button");
+const COLOR_CODE = document.querySelector(".gradient__result");
+const COLOR_FIRST = document.querySelector(".color1");
+const COLOR_SECOND = document.querySelector(".color2");
+const COLOR_THIRD = document.querySelector(".color3");
+const COLOR_FOURTH = document.querySelector(".color4");
+const COLOR_FIFTH = document.querySelector(".color5");
+const BODY = document.querySelector(".gradient");
+const BUTTON = document.querySelector(".gradient__button");
 
-
-
-//setGradient > manually set input value, display CSS linear gradient property
+//set gradient manually with input
 function setGradient() {
-	body.style.background = "linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ", " 
-	+ color3.value 
-	+ ")";
+  BODY.style.background = `linear-gradient(to bottom right, ${COLOR_FIRST.value}, ${COLOR_SECOND.value}, ${COLOR_THIRD.value}, 
+		${COLOR_FOURTH.value}, ${COLOR_FIFTH.value})`;
 
-	css.textContent = body.style.background + ",";
+  COLOR_CODE.textContent = BODY.style.background + ",";
 }
 
-window.onload = setGradient();
+window.onload = randomGradient();
 
-//randomGradient > random color values to gradient after button click
+//get gradient by button click
 function randomGradient() {
-	var randomColor1 = "#" + ((1<<24)*Math.random() | 0).toString(16);
-	var randomColor2 = "#" + ((1<<24)*Math.random() | 0).toString(16);
-	var randomColor3 = "#" + ((1<<24)*Math.random() | 0).toString(16);
-	body.style.background = "linear-gradient(to right, " 
-	+ randomColor1 
-	+ ", " 
-	+ randomColor2 
-	+ ", " 
-	+ randomColor3 
-	+ ")";
+  const randomColor = () =>
+    "#" +
+    Math.floor(Math.random() * 2 ** 24)
+      .toString(16)
+      .padStart(6, "0");
+  const PALETTE = {
+    first: randomColor(),
+    second: randomColor(),
+    third: randomColor(),
+    fourth: randomColor(),
+    fifth: randomColor(),
+  };
 
-	css.textContent = body.style.background + ",";
-	color1.value = randomColor1;
-	color2.value = randomColor2;
-	color3.value = randomColor3;
+  BODY.style.background = `linear-gradient(to bottom right, ${PALETTE.first}, ${PALETTE.second}, ${PALETTE.third},
+		${PALETTE.fourth}, ${PALETTE.fifth})`;
+
+  COLOR_CODE.textContent = BODY.style.background;
+
+  COLOR_FIRST.value = PALETTE.first;
+  COLOR_SECOND.value = PALETTE.second;
+  COLOR_THIRD.value = PALETTE.third;
+	COLOR_FOURTH.value = PALETTE.fourth;
+	COLOR_FIFTH.value = PALETTE.fifth;
 }
-button.onclick = randomGradient;
 
-color1.addEventListener("input", setGradient);
-color2.addEventListener("input", setGradient);
-color3.addEventListener("input", setGradient);
-
+COLOR_FIRST.addEventListener("input", setGradient);
+COLOR_SECOND.addEventListener("input", setGradient);
+COLOR_THIRD.addEventListener("input", setGradient);
+BUTTON.addEventListener("click", randomGradient);
